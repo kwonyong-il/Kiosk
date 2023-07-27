@@ -77,7 +77,6 @@ class FrozenCustard() {
             return main()
     }
 }
-
 class Drinks() {
     fun selectDrinksNumber() {
         println("--------------------[Drinks}--------------------")
@@ -93,7 +92,6 @@ class Drinks() {
             return main()
     }
 }
-
 class Beer() {
     fun selectBeerNumber() {
         println("--------------------[Beer}--------------------")
