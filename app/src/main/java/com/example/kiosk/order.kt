@@ -1,45 +1,27 @@
-package com.example.kiosk
-
 import com.example.kiosk_final.Menu
 
-
 class Order {
-    private val shoppingCart: ArrayList<Menu> = ArrayList()
+    private val selectedItems = mutableListOf<Menu>()
 
-    fun addMenuToCart(menu: Menu) {
-        shoppingCart.add(menu)
+    fun addItem(menu: Menu) {
+        selectedItems.add(menu)
     }
 
-    fun viewCart() {
-        println("---- Shopping Cart ----")
-        for ((index, item) in shoppingCart.withIndex()) {
-            println("[${index + 1}] ${item.name} | W${item.price} | ${item.introduce}")
+    fun getTotalAmount(): Double {
+        return selectedItems.sumOf { it.price }
+    }
+
+    fun clearOrder() {
+        selectedItems.clear()
+    }
+
+    fun printOrderReceipt() {
+        println("---- 주문 내역 ----")
+        for ((index, item) in selectedItems.withIndex()) {
+            println("[${index + 1}] $item")
         }
-        println("----------------------")
-    }
-
-    fun calculateTotalPrice(): Double {
-        var total = 0.0
-        for (item in shoppingCart) {
-            total += item.price
-        }
-        return total
-    }
-
-    fun clearCart() {
-        shoppingCart.clear()
-        println("Shopping cart cleared.")
-    }
-
-    fun checkout() {
-        if (shoppingCart.isEmpty()) {
-            println("Your shopping cart is empty.")
-            return
-        }
-
-        val totalPrice = calculateTotalPrice()
-        println("Total price: W$totalPrice")
-        println("Thank you for your order. Payment successful!")
-        clearCart()
+        println("------------------")
+        println("총 결제 금액: W${getTotalAmount()}")
+        println("------------------")
     }
 }
