@@ -1,4 +1,3 @@
-
 import java.math.BigDecimal
 
 abstract class MenuItem(var name: String, var price: BigDecimal, var explain: String)

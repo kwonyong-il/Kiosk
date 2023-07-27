@@ -16,7 +16,6 @@ fun main() {
 
         print("메뉴를 선택해주세요: ")
         val selectedMenu = readLine()?.toIntOrNull() ?: -1
-
         when (selectedMenu) {
             0 -> {
                 println("프로그램을 종료합니다.")
