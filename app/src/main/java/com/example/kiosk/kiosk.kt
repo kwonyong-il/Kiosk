@@ -46,7 +46,6 @@ fun main() {
     }
 
 }
-
 class Burger() {
     fun selectBurgerNumber() {
         println("--------------------[Burgers}--------------------")
@@ -62,7 +61,6 @@ class Burger() {
             return main()
     }
 }
-
 class FrozenCustard() {
     fun selectFrozenCustardNumber() {
         println("--------------------[Frozen Custard}--------------------")
